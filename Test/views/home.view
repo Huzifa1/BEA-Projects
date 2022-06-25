@@ -1,0 +1,138 @@
+<div><span style="color: red;">Home View</span></div>
+<div bind="text,name2,compName,array,array2,condition,cText,url,att,header,description,body,footer">
+    This is your text: {{text}} 
+    <div view="index" :data="name2"></div>
+
+    <div class="margin">Below is a component</div> 
+    <div comp="comp" :data="compName"></div>
+    
+    <!-- <div class="margin">Binding</div> 
+    <div>
+        <div :for="array">My name is: {{array[`index`]}}</div>
+    </div> -->
+    
+    <div class="margin">For array</div>
+    <div :for="array2" :for-if="number != 2"> The number is: {{number}}</div>
+
+    <div class="margin">If Condition</div>
+    <div>
+        <div :if="{{condition}}">This element is rendered</div>
+        <div :else>This second element is rendered</div>
+        <!-- <div :else-if="!{{condition}}">This second element is rendered</div> -->
+        <button class="sbtn primary" onclick="condition = !condition ">Invert Condition</button>
+    </div>
+
+    <div class="margin">Watch</div>
+    <div>
+        <div>The text is: {{cText}}</div>
+        <button class="sbtn primary" onclick="cText = 'Amazing Text'">Change Text</button>
+    </div>
+
+    <div class="margin">Check Nodes</div>
+    <div>
+        <button class="sbtn primary" onclick="ourFunction()">Check Nodes</button>
+    </div>
+
+    <div class="margin">Carousel</div>
+    <div view="carousel"></div>
+
+    <div class="margin">API</div>
+    <div view="api" :data="url,att"></div>
+
+    <div class="margin">Change API</div>
+    <input type="text" id="api"><input type="text" id="att"><button class="sbtn primary" onclick="changeAPI()">Change API</button>
+    
+    <div class="margin">Modal</div>
+    <div class="c"> 
+        <div class="w20 g_nm">
+            <tbl_nm class="inputTable" style="margin: 5px;">
+                <rw>
+                <cl><label for="hedaer"> Header</label></cl>
+                <cl><input type="text" id="header"></cl>
+                </rw>
+                <rw>
+                    <cl><label for="description">Description</label></cl>
+                    <cl><input type="text" id="description"></cl>
+                </rw>
+                <rw>
+                    <cl><label for="body">Body</label></cl>
+                    <cl><input type="text" id="body"></cl>
+                </rw>
+                <rw>
+                    <cl><label for="footer">Footer</label></cl>
+                    <cl><input type="text" id="footer"></cl>
+                </rw>
+            </tbl_nm>
+        </div>
+    </div>
+    <button class="sbtn primary" onclick="changeModal()">Change Modal</button>
+
+    <div view="modal" :data="header,description,body,footer" style="margin-top: 10px;"></div>
+</div>
+
+<script>
+    var url = "users";
+    var att = "name";
+    var name2 = "Huzaifa2";
+    var text = "Hello World!";
+    var compName = "Kab";
+    var array = ["Raouf","Jolie","Siman"];
+    var array2 = [{"number":1},{"number":2},{"number":3}];
+    var condition = false;
+    var cText = "Cool Text";
+    var header = "Header";
+    var description = "description";
+    var body = "body";
+    var footer = "footer";
+    watch = {
+        cText: function () {
+        alert("Variable changed")
+        }
+    };
+    function ourFunction(){
+        alert(nodes)
+    }
+    function changeModal(){
+        var headerTag = document.getElementById("header");
+        header = headerTag.value;
+        var descriptionTag = document.getElementById("description");
+        description = descriptionTag.value;
+        var bodyTag = document.getElementById("body");
+        body = bodyTag.value;
+        var footerTag = document.getElementById("footer");
+        footer = footerTag.value;
+    }
+    function changeAPI(){
+        var text = document.getElementById("api");
+        url = text.value;
+        var text2 = document.getElementById("att");
+        att = text2.value;
+    }
+</script>
+
+<style>
+    .margin{
+        margin-top: 10px;
+        color: red;  
+    }
+    button{
+        margin-top: 5px;
+    }
+    .inputTable{
+        margin: 5px;
+    }
+    .rowInput{
+        padding: 5px;
+    }
+    label{
+        text-align: left;
+    }
+</style>
+
+<settings>
+    {
+    hasFooter: true,
+    hasHeader: true,
+    hasNav: true
+    }
+</settings>

@@ -1,0 +1,117 @@
+<div class="g_nm w40 pt50">
+    <div class="fs24 b l" style="color: #02044a;">
+        Do you have written illustrations?
+    </div>
+    <div class="fs14 l mt10" style="color: #5b5b7c;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting.
+    </div>
+    <div class="fs0 w100 mt20">
+        <div class="g_nm w50" style="padding: 20px 20px 20px 0;">
+            <div class="sq60 round4x pointer notSelected" id="item1" onclick="item1()">
+                <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-thumb-up-outline"></span></div>
+                <div class="pa fs16 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                    Yes
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="g_nm w50" style="padding: 20px 0px 20px 20px;">
+            <div class="sq60 round4x pointer notSelected" id="item2" onclick="item2()">
+                <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-thumb-down-outline"></span></div>
+                <div class="pa fs16 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                    No
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fs0 r">
+        <a href="/home/step3" class="g_nm round4x w20 sbtn light pt15 pb10 mr15">
+            <span class="fs18 mdi mdi-arrow-left vm b"></span><span class="fs14 vm b"> &nbsp; Back</span>
+        </a>
+        <div class="g_nm w25">
+            <form b-sub="beforeSub" o-sub="onSubmit">
+                <input type="submit" class="w100 round4x sbtn primary pt15 pb15" value="Next">
+            </form>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+<style>
+    .selected{
+        border: 2px solid #5f30e2;
+    }
+    .notSelected{
+        border: 1px solid rgb(206, 198, 198);
+    }
+</style>
+
+<script>
+
+    data();
+    function data(){
+        // step4Data = globals.information.step4;
+        // if(!(step4Data == "")){
+        //     if(step4Data == "Yes"){
+        //         item1();
+        //     }
+        //     else if(step4Data == "No"){
+        //         item2();
+        //     }
+        // }
+        step4Data = sessionStorage.getItem("step4");
+        if((step4Data != null)){
+            if(step4Data == "Yes"){
+                item1();
+            }
+            else if(step4Data == "No"){
+                item2();
+            }
+        }
+    }
+
+    function item1(){
+        if(!$("#item1").hasClass("selected")){
+            $("#item1").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item2").hasClass("selected")){
+            $("#item2").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function item2(){
+        if(!$("#item2").hasClass("selected")){
+            $("#item2").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item1").hasClass("selected")){
+            $("#item1").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function beforeSub(form, info){
+        if($("#item1").hasClass("notSelected") && $("#item2").hasClass("notSelected")){
+            alert("Please Select an Item");
+            return false;
+        }
+        // if($("#item1").hasClass("selected")){
+        //     globals.information.step4 = "Yes";
+        // }
+        // else if($("#item2").hasClass("selected")){
+        //     globals.information.step4 = "No";
+        // }
+        if($("#item1").hasClass("selected")){
+            sessionStorage.setItem("step4", "Yes");
+            // globals.information.step3 = "Yes";
+        }
+        else if($("#item2").hasClass("selected")){
+            sessionStorage.setItem("step4", "No");
+            // globals.information.step3 = "No";
+        }
+    }
+    function onSubmit(form, info){
+        pushURL("/home/step5");
+    }
+
+</script>

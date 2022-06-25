@@ -1,0 +1,27 @@
+<div bind="array">
+    <div class="p0 ph50 carouselSelector"  >
+        <div class="w33 sq33 g_nm" :for="array" :for-limit="20">
+            <div class="ov mr10 ml10" style="background-image: url('{{url}}');"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var array = [];
+    API.get("/photos", {}, {}, 1)
+                    .then((data) => {
+                        array = data;
+                        setTimeout(() => {
+                        console.log("addedd")
+                        let opts = '{"cellAlign": "left", "freeScroll": false, "wrapAround": false, "prevNextButtons": true, "pageDots": false}';
+                        setTimeout(() => {
+                            $(".carouselSelector").show().flickity(JSON.parse(opts));
+                        }, 500);
+
+                    }, 1000);
+                    })
+                    .catch((err) => {
+                        console.log("err:", err)
+                    })
+    
+</script>

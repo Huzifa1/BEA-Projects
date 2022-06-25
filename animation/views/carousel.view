@@ -1,0 +1,41 @@
+<div bind="">
+    <div class="p0 ph50 carouselSelector">
+        <div class="w100 g_nm">
+            <div class="w100 sq60 c">
+                <div class="sbtn primary" style="z-index: 2;" onclick="hideCarousel()">Remove</div>
+                <div class="ov mr10 ml10 cov" style="background-image: url('https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840__340.jpg');"></div>
+            </div>
+        </div>
+        <div class="w100 g_nm">
+            <div class="w100 sq60 c">
+                <div class="sbtn primary" style="z-index: 2;" onclick="hideCarousel()">Remove</div>
+                <div class="ov mr10 ml10 cov" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/19/18/31/traffic-7272520__340.jpg');"></div>
+            </div>
+        </div>
+        <div class="w100 g_nm">
+            <div class="w100 sq60 c">
+                <div class="sbtn primary" style="z-index: 2;" onclick="hideCarousel()">Remove</div>
+                <div class="ov mr10 ml10 cov" style="background-image: url('https://cdn.pixabay.com/photo/2022/05/27/10/35/strawberry-7224875__340.jpg');"></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<script>
+    setTimeout(() => {
+        console.log("addedd")
+        let opts = '{"cellAlign": "left", "freeScroll": false, "wrapAround": false, "prevNextButtons": true, "pageDots": false}';
+        setTimeout(() => {
+            $(".carouselSelector").show().flickity(JSON.parse(opts));
+        }, 500);
+
+    }, 1000);
+
+
+
+    function hideCarousel(){
+        $("#carousel").toggleClass('h');
+    }
+</script>

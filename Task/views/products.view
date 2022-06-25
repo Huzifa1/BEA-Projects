@@ -1,0 +1,37 @@
+<div bind="products">
+<div comp="product" :data="products"></div>
+</div>
+
+
+
+
+
+
+<script>
+    products = [];
+    d={
+        fields:"Name,Description,Price,Quantity,Store,createdAt",
+        media: "images",
+        limit: -1,
+    }
+    API.get("/Productss", d)
+    .then((data) => {
+        products = data;
+        console.log(data);
+    })
+    .catch((err) => {
+        console.log("err:", err)
+    })
+</script>
+
+
+<settings>
+    {
+    hasFooter: false,
+    hasHeader: flase,
+    hasNav: true
+    }
+</settings>
+
+
+

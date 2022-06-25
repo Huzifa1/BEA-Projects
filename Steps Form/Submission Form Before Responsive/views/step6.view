@@ -1,0 +1,134 @@
+<div class="g_nm w40 pt50">
+    <div class="fs24 b l" style="color: #02044a;">
+        Confirm Submission
+    </div>
+    <div class="fs14 l mt10 quesColor">
+        Thanks for taking time to complete this form.
+    </div>
+    <div class="w100 fs0 mt40">
+        <div class="l g_nm w70 fs14 b" id="question" style="color: #5b5b7c;">What's your best contact email?</div>
+        <div class="r g_nm w30 fs12 vh" id="errorMessage" style="color: red;">Invalid email address</div>
+    </div>
+    <form b-sub="beforeSub" o-sub="onSubmit">
+        <div class="l mt10">
+            <input class="fs12 w100 round2x pl10" type="text" name="email" id="inputEmail" placeholder="Email">
+        </div>
+        <div class="fs14 l mt10" style="color: #5b5b7c;">
+            By submitting, you are agreeing to our <a href="#" class="sbtn link" style="padding: 0; color: #5f30e2;">Terms </a> and <a href="#" class="sbtn link" style="padding: 0;color: #5f30e2;">Privacy Policy</a>
+        </div>
+        
+        <div class="fs0 r mt20">
+            <a href="/home/step5" class="g_nm round4x w20 sbtn light mt10 pt15 pb15 mr15">
+                <span class="fs18 mdi mdi-arrow-left vm b"></span><span class="fs14 vm b"> &nbsp; Back</span>
+            </a>
+            <!-- <div class="g_nm round4x w40 sbtn primary mt10">
+                <span class="cc fs14">Confirm Submission</span>
+            </div> -->
+            <!-- <input type="submit" class="g_nm sbtn primary mt10 w40 round4x fs14" value="Confirm Submission"> -->
+            <div class="g_nm w30 mt10 vm">
+                <input type="submit" class="round4x sbtn primary pt15 pb15" value="Confirm Submission">
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .selected{
+        border: 2px solid #5f30e2;
+    }
+    .notSelected{
+        border: 1px solid rgb(206, 198, 198);
+    }
+    input[type=text]{
+        height: 40px;
+        border: 1px solid rgb(206, 198, 198);
+    }
+    input[type=text]:focus {
+        border: 1px solid #5f30e2;
+        background-color: #e9e7f0;
+    }
+   .error{
+        border: 1px solid red !important;
+        background-color: #fcafb5;
+   }
+   .redColor{
+       color: red !important;
+   }
+   .quesColor{
+        color: #5b5b7c;
+   }
+</style>
+
+<script>
+
+    
+
+    document.getElementById("inputEmail").onfocus = function() {focusEmail()};
+    function focusEmail(){
+        var email = document.getElementById('inputEmail');
+        var errorMessage = document.getElementById('errorMessage');
+        var question = document.getElementById('question');
+        if(email.classList.contains("error")){
+            email.classList.remove("error");
+        }
+        if(!errorMessage.classList.contains("vh")){
+            errorMessage.classList.add("vh");
+        }
+        if(question.classList.contains("redColor")){
+            question.classList.remove("redColor");
+            question.classList.add("quesColor");
+        }
+    }
+    function beforeSub(form, info){
+        var isValid = false;
+        var email = document.getElementById('inputEmail');
+        var question = document.getElementById('question');
+        var errorMessage = document.getElementById('errorMessage');
+        if(email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)==null){
+            if(!email.classList.contains("error")){
+                email.classList.add("error");
+            }
+            if(!question.classList.contains("redColor")){
+                question.classList.remove("quesColor");
+                question.classList.add("redColor");
+            }
+            if(errorMessage.classList.contains("vh")){
+                errorMessage.classList.remove("vh");
+            }
+        }
+        else{
+            sessionStorage.setItem("step6", info.email);
+            isValid = true;
+        }
+        return isValid;
+        // alert(["before submit",info.email])
+    }
+    function onSubmit(form, info){
+        console.log("step1: " + sessionStorage.step1);
+        console.log("step2Name: " + sessionStorage.step2Name);
+        console.log("step2Number: " + sessionStorage.step2Number);
+        console.log("step2Website: " + sessionStorage.step2Website);
+        console.log("step3: " + sessionStorage.step3);
+        console.log("step4: " + sessionStorage.step4);
+        console.log("step5: " + sessionStorage.step5);
+        console.log("step6: " + sessionStorage.step6);
+        if(sessionStorage.removeItem("step1") != null)
+            sessionStorage.removeItem("step1");
+        if(sessionStorage.removeItem("step2Name") != null)
+            sessionStorage.removeItem("step2Name");
+            sessionStorage.removeItem("step2Number");
+            if(sessionStorage.removeItem("step2Website") != null)
+                sessionStorage.removeItem("step2Website");
+        if(sessionStorage.removeItem("step3") != null)
+            sessionStorage.removeItem("step3");
+        if(sessionStorage.removeItem("step4") != null)
+            sessionStorage.removeItem("step4");
+        if(sessionStorage.removeItem("step5") != null)    
+            sessionStorage.removeItem("step5");
+        if(sessionStorage.removeItem("step6") != null)
+            sessionStorage.removeItem("step6");
+        alert("The form will be resetted");
+        pushURL("/home/step1");
+    }
+    
+</script>

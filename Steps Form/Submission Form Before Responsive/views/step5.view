@@ -1,0 +1,130 @@
+<div class="g_nm w40 pt50">
+    <div class="fs24 b l" style="color: #02044a;">
+        What project bracket are you in?
+    </div>
+    <div class="fs14 l mt10" style="color: #5b5b7c;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting.
+    </div>
+    <div class="fs0 w100 mt20">
+        <div class="g_nm w33" style="padding: 20px 20px 20px 0;">
+            <div class="sq100 round4x pointer notSelected" id="item1" onclick="item1()">
+                <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-cash-multiple "></span></div>
+                <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                    $5,000 + 
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="g_nm w33" style="padding: 20px 10px 20px 10px;">
+            <div class="sq100 round4x pointer notSelected" id="item2" onclick="item2()">
+                <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-currency-usd "></span></div>
+                <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                    $10,000 + 
+                </div>
+            </div>
+        </div>
+        <div class="g_nm w33" style="padding: 20px 0px 20px 20px;">
+            <div class="sq100 round4x pointer notSelected" id="item3" onclick="item3()">
+                <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-lightbulb-on-outline "></span></div>
+                <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                    $20,000 + 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fs0 r">
+        <a href="/home/step4" class="g_nm round4x w20 sbtn light pt15 pb10 mr15">
+            <span class="fs18 mdi mdi-arrow-left vm b"></span><span class="fs14 vm b"> &nbsp; Back</span>
+        </a>
+        <div class="g_nm w25">
+            <form b-sub="beforeSub" o-sub="onSubmit">
+                <input type="submit" class="w100 round4x sbtn primary pt15 pb15" value="Next">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .selected{
+        border: 2px solid #5f30e2;
+    }
+    .notSelected{
+        border: 1px solid rgb(206, 198, 198);
+    }
+</style>
+<script>
+    data();
+    function data(){
+        step5Data = sessionStorage.getItem("step5");
+        if((step5Data != null)){
+            if(step5Data == "$5000 +"){
+                item1();
+            }
+            else if(step5Data == "$10000 +"){
+                item2();
+            }
+            else if(step5Data == "$20000 +"){
+                item3();
+            }
+        }
+    }
+
+
+    function item1(){
+        if(!$("#item1").hasClass("selected")){
+            $("#item1").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item2").hasClass("selected")){
+            $("#item2").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item3").hasClass("selected")){
+            $("#item3").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function item2(){
+        if(!$("#item2").hasClass("selected")){
+            $("#item2").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item1").hasClass("selected")){
+            $("#item1").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item3").hasClass("selected")){
+            $("#item3").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function item3(){
+        if(!$("#item3").hasClass("selected")){
+            $("#item3").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item1").hasClass("selected")){
+            $("#item1").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item2").hasClass("selected")){
+            $("#item2").removeClass("selected").addClass("notSelected");
+        }
+    }
+
+    function beforeSub(form, info){
+        if($("#item1").hasClass("notSelected") && $("#item2").hasClass("notSelected") && $("#item3").hasClass("notSelected")){
+            alert("Please Select an Item");
+            return false;
+        }
+        if($("#item1").hasClass("selected")){
+            // globals.information.step5 = "$5000 +";
+            sessionStorage.setItem("step5", "$5000 +");
+        }
+        else if($("#item2").hasClass("selected")){
+            // globals.information.step5 = "$10000 +";
+            sessionStorage.setItem("step5", "$10000 +");
+        }
+        else if($("#item3").hasClass("selected")){
+            // globals.information.step5 = "$20000 +";
+            sessionStorage.setItem("step5", "$20000 +");
+        }
+    }
+    function onSubmit(form, info){
+        pushURL("/home/step6");
+    }
+</script>

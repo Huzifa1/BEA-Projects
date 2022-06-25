@@ -1,0 +1,33 @@
+<div> Form 2
+    <form b-sub="beforeSub" o-sub="onSubmit">
+        <input type="text" name="username" id="username">
+        <input type="tel" name="phone" id="phone">
+        <input type="submit" class="sbtn primary" value="Go Home">
+    </form>
+</div>
+
+
+<script>
+    // console.log(View)
+    // window.onbeforeunload = function() {
+    //     localStorage.setItem("name", $('#username').val());
+    //     localStorage.setItem("phone", $('#phone').val());
+    // }
+    // window.onload = function() {
+    //     var name = localStorage.getItem("name");
+    //     var phone = localStorage.getItem("phone");
+    //     $('#username').val(name);
+    //     $('#phone').val(phone);
+    // }
+
+    function beforeSub(form, info){
+        alert(["before submit",info.username,info.phone]);
+        var username = $('#username').val();
+        sessionStorage.setItem("username", username);
+    }
+
+    function onSubmit(form, info){
+        alert(["on submit",info.username,info.phone])
+        pushURL("/try3");
+    }
+</script>

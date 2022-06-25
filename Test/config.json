@@ -1,0 +1,18 @@
+{
+  "node": {
+    "host": "127.0.0.1",
+    "port": "3000"
+  },
+  "apis": [
+    {
+      "baseURL": "https://api.backendadmin.com/1",
+      "headers": {
+        "X-BEA-Application-ID": "YOUR_APPLICATION_ID",
+        "X-BEA-Authorization": "YOUR_REST_API_KEY"
+      }
+    },
+    {
+      "baseURL": "https://jsonplaceholder.typicode.com"
+    }
+  ]
+}

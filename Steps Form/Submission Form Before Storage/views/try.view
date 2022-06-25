@@ -1,0 +1,32 @@
+<div> Form 1
+    <form action="/try2">
+        <input type="text" name="username" id="username">
+        <input type="tel" name="phone" id="phone">
+        <input type="hidden" name="try" value="Just Trying">
+        <input type="submit" class="sbtn primary" value="Go Home">
+    </form>
+</div>
+
+
+<script>
+    window.onbeforeunload = function() {
+        localStorage.setItem("name", $('#username').val());
+        localStorage.setItem("phone", $('#phone').val());
+    }
+    window.onload = function() {
+        console.log("Loaded");
+
+        // $('#username').val(localStorage.getItem("name"));
+        // $('#phone').val(localStorage.getItem("phone"));
+
+    }
+
+    function beforeSub(form, info){
+        alert(["before submit",info.username,info.phone])
+    }
+
+    function onSubmit(form, info){
+        alert(["on submit",info.username,info.phone]);
+        pushURL("/try2");
+    }
+</script>

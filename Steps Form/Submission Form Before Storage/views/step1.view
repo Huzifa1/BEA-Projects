@@ -1,0 +1,125 @@
+<div bind="">
+    <div class="g_nm w40 pt50">
+        <div class="fs24 b l" style="color: #02044a;">
+            What services do you need?
+        </div>
+        <div class="fs14 l mt10" style="color: #5b5b7c;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting.
+        </div>
+        <div class="fs0 w100 mt20">
+            <div class="g_nm w33" style="padding: 20px 20px 20px 0;">
+                <div class="sq100 round4x pointer notSelected" id="item1" onclick="item1()">
+                    <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-brush-outline"></span></div>
+                    <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                        Design
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="g_nm w33" style="padding: 20px 10px 20px 10px;">
+                <div class="sq100 round4x pointer notSelected" id="item2" onclick="item2()">
+                    <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-message-reply-text-outline"></span></div>
+                    <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                        Message
+                    </div>
+                </div>
+            </div>
+            <div class="g_nm w33" style="padding: 20px 0px 20px 20px;">
+                <div class="sq100 round4x pointer notSelected" id="item3" onclick="item3()">
+                    <div class="w100 pa fs70" style="top:10%; color: #02044a;"><span class="mdi mdi-magnify"></span></div>
+                    <div class="pa fs14 b" style="bottom:12%; left: 15%; right: 15%; color: #5b5b7c;">
+                        Other
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <form b-sub="beforeSub" o-sub="onSubmit">
+                <input type="submit" class="w25 round4x sbtn primary pt15 pb15" value="Next">
+            </form>
+        </div>
+
+    </div>
+</div>
+<style>
+    .selected{
+        border: 2px solid #5f30e2;
+    }
+    .notSelected{
+        border: 1px solid rgb(206, 198, 198);
+    }
+</style>
+
+<script>
+
+   console.log(View.props);
+    data();
+    function data(){
+        step1Data = globals.information.step1;
+        if(!(step1Data == "")){
+            if(step1Data == "Design"){
+                item1();
+            }
+            else if(step1Data == "Message"){
+                item2();
+            }
+            else if(step1Data == "Other"){
+                item3();
+            }
+        }
+    }
+
+    function item1(){
+        if(!$("#buttonStep1").hasClass("selected")){
+            $("#item1").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item2").hasClass("selected")){
+            $("#item2").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item3").hasClass("selected")){
+            $("#item3").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function item2(){
+        if(!$("#item2").hasClass("selected")){
+            $("#item2").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item1").hasClass("selected")){
+            $("#item1").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item3").hasClass("selected")){
+            $("#item3").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function item3(){
+        if(!$("#item3").hasClass("selected")){
+            $("#item3").removeClass("notSelected").addClass("selected");
+        }
+        if($("#item1").hasClass("selected")){
+            $("#item1").removeClass("selected").addClass("notSelected");
+        }
+        if($("#item2").hasClass("selected")){
+            $("#item2").removeClass("selected").addClass("notSelected");
+        }
+    }
+    function beforeSub(form, info){
+        if($("#item1").hasClass("notSelected") && $("#item2").hasClass("notSelected") && $("#item3").hasClass("notSelected")){
+            alert("Please Select an Item");
+            return false;
+        }
+        if($("#item1").hasClass("selected")){
+            globals.information.step1 = "Design";
+        }
+        else if($("#item2").hasClass("selected")){
+            globals.information.step1 = "Message";
+        }
+        else if($("#item3").hasClass("selected")){
+            globals.information.step1 = "Other";
+        }
+    }
+    function onSubmit(form, info){
+        console.log(globals.information);
+        pushURL("/home/step2");
+    }
+</script>

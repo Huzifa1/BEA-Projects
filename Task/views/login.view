@@ -1,0 +1,164 @@
+<div bind="" class="mh100 oh l m_c" style="background-color: #231e1f;">
+        <div class="ov pf m_h m_m_h">
+            <video autoplay loop muted>
+                <source src="https://s.beacdn.com/v/sign_in@2x.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="mt70 w30 md_w40 m_w70 m_m_w100 g_nm c pl20 pr30">
+            <div class="mb15 c">
+                <div class="g_nm logo">
+                    <div class="cc fs50"><span class="mdi mdi-resistor-nodes cw"></span></div>
+                </div>
+            </div>
+            <div class="c fs12 cw20 mb10">Welcom To Edge</div>
+            <div class="c fs24 cw mb15">Sign in <span class="cw20">Admin Panel</span></div>
+            
+            <div class="w100 g_nm">
+                <div class="w100 sbtn primary xlg">Sign in with Facebook</div>                
+                <div class="ov fs24 button_icon"  style="right: auto;"><span class="cc mdi mdi-facebook"></span></div>
+            </div>
+            
+            <hr class="mt30 mb30 w100">
+
+            <div class="mb20 errorMessage h" style="color:red"> Username or password are incorrect</div>
+
+            <form o-sub="onSubmit">
+                <div class="mb20 w100 g_nm">
+                    <input type="email" name="email" id="inputEmail" class="fs12 input" placeholder="Email" required onkeyup="invalidEmail()" onfocus="invalidEmail()">
+                    <div class="ov fs20 input_icon"  style="right: auto;"><span class="cc mdi mdi-email-outline"></span></div>
+                </div>
+                <div class="mb20 w100 g_nm">
+                    <input type="password" name="password" id="inputPass" class="fs12 input" placeholder="Password" required onkeyup="invalidPass()" onfocus="invalidPass()">
+                    <div class="ov fs20 input_icon"  style="right: auto;"><span class="cc mdi mdi-key-outline"></span></div>
+                </div>
+                <div class="w100 g_nm mb10">
+                    <input type="submit" class="w100 sbtn dark xlg" value="Sign in">             
+                </div>
+            </form>
+            <div class="r">
+                <a class="sbtn link cw80 fs12" href="#">Forgot my password</a>
+            </div>
+
+        </div>
+</div>
+
+<style>
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(255,255,255,0.4);
+}
+video {
+    height: 100%;
+    width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw; /* 100 * 9 / 16 */
+}
+.logo{
+    width: 90px;
+    height: 90px;
+    background-color: #2849F1; 
+    border-radius: 30px;
+}
+.input{
+    width: 100%;
+    height: 50px;
+    padding-left: 70px;
+    color: #fff;
+    background-color: #21282E;
+    border: 1px solid #21282E;
+    border-radius: 6px;
+}
+.input_icon{
+    width: 50px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 6px 0px 0px 6px;
+    color:#fff;
+}
+.button_icon{
+    width: 50px;
+    color:#fff;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 50px 30px #21282E inset !important;
+            box-shadow: 0 0 50px 30px #21282E inset;
+    -webkit-text-fill-color: white !important;
+}
+</style>
+
+<script>
+    function onSubmit(form, info){
+        if(invalidPass() && invalidEmail()){
+            d={
+                fields:"Email,Password,userName,emailVerified,authData,firstName",
+                where:{
+                    Email: info.email,
+                    Password: info.password
+                }
+            }
+            API.get("/Users", d)
+            .then((data) => {
+                console.log(data);
+                alert(data);
+                if(data.results.length == 0){
+                    $(".errorMessage").removeClass("h");
+                }
+                else{
+                    $(".errorMessage").addClass("h");
+                }
+            })
+            .catch((err) => {
+                console.log("err:", err)
+            })
+        }
+        
+    }
+    function invalidEmail(){
+        var isValid = false;
+        var email = document.getElementById('inputEmail');
+        if(email.checkValidity()){
+            email.style.borderColor = '#21282E';
+            email.setCustomValidity('');
+            isValid = true;
+        }
+        else{
+            email.style.borderColor = 'red';
+        }
+        return isValid;
+    }
+    function invalidPass(){
+        var isValid = false;
+        var inputPass = document.getElementById('inputPass');
+        
+        if(inputPass.value.length == 0){
+            inputPass.style.borderColor = 'red';
+            inputPass.setCustomValidity('Please enter a password')
+        }
+        else{ 
+            inputPass.style.borderColor = '#21282E';
+            inputPass.setCustomValidity('');
+            isValid = true;
+        }
+        return isValid;
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<settings>
+    {
+    hasFooter: false,
+    hasHeader: false,
+    hasNav: false
+    }
+</settings>

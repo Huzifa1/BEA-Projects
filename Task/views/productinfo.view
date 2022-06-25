@@ -1,0 +1,132 @@
+<div bind="products,quantity" class="mh100 p50 fs0" >
+   
+
+        <div class="g_nm p0 carouselSelector vt md_w50 m_w100" style="width: 40%;">
+            <div class="w100 g_nm" :for="products.results[0].images.untitled">
+                <div class="sq80">
+                    <div class="ov con" style="background-image: url('{{dir}}{{image}}');"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="g_nm w30 md_w50 m_w100 vt l">
+            <div class="ph25 pl40">
+
+                <div class="w100 f0 cw b">
+                    <div class="l g_nm w80 fs18 b">{{products.results[0].Name}}</div>
+                    <div class="r g_nm w20 fs14" style="color: yellow;">0.0 <span class="fs12 mdi mdi-star"></span></div>
+                </div>
+                <hr class="mt5 mb20 w100">
+                <div class="fs0 w100 cw mb10">
+                    <div class="l g_nm w50 fs12 b">Price:</div>
+                    <div class="r g_nm w50 fs12">${{products.results[0].Price}}</div>
+                </div>
+                <div class="fs0 w100 cw mb10">
+                    <div class="l g_nm w50 fs12 b">Category:</div>
+                    <div class="r g_nm w50 fs12">Gaming</div>
+                </div>
+                <div class="fs0 w100 cw mb10">
+                    <div class="l g_nm fs12 b" style="width: 85%;">Quantity:</div>
+                    <div class="r g_nm fs0" style="width: 15%;">
+                        <button class="pointer cw g_nm w33 fs12 quantButton" onclick="decreament()"><span class="mdi mdi-minus"></span></button>
+                        <input type="text" id="quantity" class="g_nm w33 fs12 c cw quantButton" name="quantity" value="{{quantity}}" disabled>
+                        <button class="pointer cw g_nm w33 fs12 quantButton" onclick="increament()"><span class="mdi mdi-plus"></span></button>
+                    </div>
+                </div>
+                <hr class="mt5 mb20 w100">
+                <div class="fs12 w100 cw b mb10 l">
+                    About: 
+                </div>
+                <div class="fs12 w100 cw mb15 j">
+                    {{products.results[0].Description}}
+                </div>
+                <div id="total" class="w100 sbtn information mb15">Add to Cart ${{products.results[0].Price * quantity}}</div>
+                <div class="fs12 w100 cw mb15 l">
+                    Available on {{products.results[0].Store}}
+                </div>
+                <hr class="mt5 mb20 w100">
+            </div>
+        </div>
+
+</div>
+
+<style>
+    body{
+        background-color: #333;
+    }
+    .quantButton{
+        background: transparent;
+        border-style: none;
+    }
+    @media only screen and (max-width: 1024px){
+        .flickity-prev-next-button {
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .flickity-prev-next-button {
+            top: 50%;
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    @media only screen and (max-width: 425px){
+        .flickity-prev-next-button {
+            top: 50%;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    }
+</style>
+
+<script>
+    setTimeout(() => {
+        console.log("addedd")
+        let opts = '{"cellAlign": "left", "freeScroll": false, "wrapAround": false, "prevNextButtons": true, "pageDots": false}';
+        setTimeout(() => {
+            $(".carouselSelector").show().flickity(JSON.parse(opts));
+        }, 1000);
+    }, 1000);
+
+
+
+    quantity = 1;
+    products = [];
+    d={
+        fields:"Name,Description,Price,Quantity,Store",
+        where:{
+                    objectId: nodes[1],
+                },
+        media: "images",
+        limit: -1,
+    }
+    API.get("/Productss", d)
+    .then((data) => {
+        products = data;
+        console.log(data);
+    })
+    .catch((err) => {
+        console.log("err:", err)
+    })
+    function increament(){
+        if(quantity < products.results[0].Quantity ){
+            quantity++;
+        }
+    }
+    function decreament(){
+        
+        if(quantity>1){
+            quantity--;
+        }
+       
+    }
+
+</script>

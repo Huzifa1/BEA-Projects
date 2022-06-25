@@ -1,0 +1,378 @@
+
+<div class="mh100 w100 ov h" id="carousel" style="z-index: 15;">
+  <div class="ov ba r" style="right: 2%;"><span class="fs40 mdi mdi-close-thick pointer" id="closeButton"></span></div>
+  <div class="w80 ov mr10 ml10 cov cc" id="backgroundImage" style="height:80%;background-image: url('');"></div>
+</div>
+<div class="mh100 w100 ov" id="background"></div>
+<div class="mh100 w100 oh ez" id="mainDiv">
+    <div class="red ov ez" id="redDiv">
+        <div class="ez cc l w100 hide" id="parent1">
+            <div class="pa cc ez cov anyImage" id="image1" style="background-image: url('https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840__340.jpg');bottom:0%;z-index: 3;"></div>
+            <div class="pa cc ez cov anyImage" id="image2" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/19/18/31/traffic-7272520__340.jpg');bottom:35%;left:50%;z-index: 2;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent2">
+            <div class="pa cc ez cov anyImage" id="image3" style="background-image: url('https://cdn.pixabay.com/photo/2022/05/27/10/35/strawberry-7224875__340.jpg');right:0%;bottom:0%;z-index: 1;"></div>
+            <div class="pa cc ez cov anyImage" id="image4" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/07/16/23/lion-7248726__340.jpg');bottom:35%;right:50%;z-index: 0;"></div>
+        </div>
+        <div class="ez cc l w100 hide" id="parent3">
+            <div class="pa cc ez cov anyImage" id="image5" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/12/22/35/village-7258991__340.jpg');top:0%;right:0%;z-index: 1;"></div>
+            <div class="pa cc ez cov anyImage" id="image6" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/08/13/50/bee-7250540__340.jpg');top:35%;right:50%;z-index: 0;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent4">
+            <div class="pa cc ez cov anyImage" id="image7" style="background-image: url('https://cdn.pixabay.com/photo/2013/08/29/02/47/eiffel-tower-176935__340.jpg');top:0%;z-index: 3;"></div>
+            <div class="pa cc ez cov anyImage" id="image8" style="background-image: url('https://cdn.pixabay.com/photo/2022/02/23/19/20/flower-7031283__340.jpg');top:35%;left:50%;z-index: 1;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent5">
+            <div class="pa cc ez cov anyImage" id="image9" style="background-image: url('https://cdn.pixabay.com/photo/2021/07/24/01/53/macaw-6488474__340.jpg');top:0%;z-index: -2;left:10%;z-index: 1;"></div>
+            <div class="pa cc ez cov anyImage" id="image10" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/15/17/14/little-girl-7264330__340.jpg');top:35%;left:50%;z-index: 2;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent6">
+            <div class="pa cc ez cov anyImage" id="image11" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/08/13/50/bee-7250540__340.jpg');bottom:0%;z-index: -2;left:10%;z-index: 1;"></div>
+            <div class="pa cc ez cov anyImage" id="image12" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/09/10/13/flower-7252179__340.png');bottom:35%;left:50%;z-index: 2;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent7">
+            <div class="pa cc ez cov anyImage" id="image13" style="background-image: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg');bottom:0%;z-index: -2;left:10%;z-index: 3;"></div>
+            <div class="pa cc ez cov anyImage" id="image14" style="background-image: url('https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297__340.jpg');bottom:45%;left:-10%;z-index: 2;"></div>
+        </div>
+        <div class="ez cc r w100 hide" id="parent8">
+            <div class="pa cc ez cov anyImage" id="image15" style="background-image: url('https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__340.jpg');bottom:0%;z-index: -2;left:10%;z-index: 3;"></div>
+            <div class="pa cc ez cov anyImage" id="image16" style="background-image: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828__340.jpg');bottom:45%;right:-10%;z-index: 1;"></div>
+        </div>
+        <div class="sbtn primary cc" id="zoomOut">Zoom Out</div>
+        <!-- <div class="hv100" id="arrows" style="color: black;">
+            <div class="pa" style="top: 5%;right: 50%;bottom: 95%;left:50%;"><span class="mdi mdi-arrow-up pointer fs26" id="up"></span></div>
+            <div class="pa" style="top: 47%;right: 95%;bottom: 48%;left:5%;"><span class="mdi mdi-arrow-left pointer fs26" id="left"></span></div>
+            <div class="pa" style="top: 47%;right: 5%;bottom: 48%;left:95%;"><span class="mdi mdi-arrow-right pointer fs26" id="right"></span></div>
+            <div class="pa" style="top: 90%;right: 50%;bottom: 10%;left:50%;"><span class="mdi mdi-arrow-down pointer fs26" id="down"></span></div>
+            <div class="sbtn primary cc" id="zoomOut">Zoom Out</div>
+            
+        </div>
+    </div>
+    <div class="blue ov ez moveLeft" id="blueDiv">
+        <div class="cb h100 w10"><span class="mdi mdi-arrow-left pointer fs26 cc" id="blueLeft"></span></div>
+    </div>
+    <div class="yellow ov ez moveRight r" id="yellowDiv">
+        <div class="cb cc w100 p20"><span class="mdi mdi-arrow-right pointer fs26" id="yellowRight"></span></div>
+    </div>
+    <div class="orange ov ez moveUp" id="orangeDiv">
+        <div class="cb pa" style="bottom: 5%;left:50%;"><span class="mdi mdi-arrow-down pointer fs26" id="orangeDown"></span></div>
+    </div>
+    <div class="green ov ez moveDown" id="greenDiv">
+        <div class="cb pa" style="top: 5%;left:50%;"><span class="mdi mdi-arrow-up pointer fs26" id="greenUp"></span></div> -->
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+    .red{
+        height: 100vh;
+        background-color: red;
+    }
+    .opacity{
+        opacity: 0;
+    }
+   /*  .blue{
+        height: 100vh;
+        background-color: blue;
+    }
+    .yellow{
+        height: 100vh;
+        background-color: yellow;
+    }
+    .green{
+        height: 100vh;
+        background-color: green;
+    }
+    .orange{
+        height: 100vh;
+        background-color: orange;
+    }
+  .moveLeft {
+    left:100%;
+    right:-100%;
+  }
+  .moveRight {
+    right:100%;
+    left:-100%;
+  }
+  .moveUp {
+    bottom:100%;
+    top:-100%;
+  }
+  .moveDown {
+    top:100%;
+    bottom:-100%;
+  } */
+  .zoomOut {
+    transform: scale(0.3);
+  }
+  .hide {
+    width: 0px;
+    height: 0px;
+  }
+  .anyImage {
+    width: 60%;
+    height: 80%;
+  }
+  .anyImage:hover {
+    transform: scale(1.2);
+    z-index: 5 !important;
+  }
+  .imagePos1 {
+    position: absolute;
+    left: 90%;
+    right: -100%;
+    top:-80%;
+    height: 100vh;
+  }
+  .imagePos2 {
+    position: absolute;
+    right: 100%;
+    left: -96%;
+    top:-80%;
+    height: 100vh;
+  }
+  .imagePos3 {
+    position: absolute;
+    height: 100vh;
+    right: 100%;
+    left: -90%;
+    bottom:-75%;
+    }
+  .imagePos4 {
+    position: absolute;
+    height: 100vh;
+    left: 93%;
+    right: -100%;
+    bottom:-90%;
+  }
+  .imagePos5 {
+    position: absolute;
+    height: 100vh;
+    bottom:-100%;
+    left:-5%;
+  }
+  .imagePos6 {
+    position: absolute;
+    height: 100vh;
+    top:-100%;
+  }
+  .imagePos7 {
+    position: absolute;
+    height: 100vh;
+    left:-90%;
+  }
+  .imagePos8 {
+    position: absolute;
+    height: 100vh;
+    right:-105%;
+  }
+  .blur {
+    background-color: rgb(128, 132, 136);
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+  }
+  .justBlur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+</style>
+
+<script>
+    $("#zoomOut").click(function(){
+      $("#mainDiv").toggleClass("zoomOut");
+      $("#mainDiv").toggleClass('oh');
+      $("#background").toggleClass('blur');
+      
+      move(1, [1,2], 100);
+      move(2, [3,4], 200);
+      move(3, [5,6], 300);
+      move(4, [7,8], 400);
+      move(5, [9,10], 500);
+      move(6, [11,12], 600);
+      move(7, [13,14], 700);
+      move(8, [15,16], 800);
+  });
+  function move(parentNb, imageArray, time){
+    setTimeout(function(){ 
+          $("#parent" + parentNb).toggleClass("imagePos" + parentNb).toggleClass("cc").toggleClass("hide");
+          $("#image" + imageArray[0]).toggleClass("cc");
+          $("#image" + imageArray[1]).toggleClass("cc");
+      }, time);
+  }
+  
+
+$(".anyImage").click(function(){
+  $("#carousel").toggleClass('h');
+  $("#redDiv").toggleClass('justBlur');
+  style = this.currentStyle || window.getComputedStyle(this, false),
+  bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+  $('#backgroundImage').css("background-image", "url('"+bi+"')");
+});
+$("#closeButton").click(function(){
+  $("#carousel").toggleClass('h');
+  $("#redDiv").toggleClass('justBlur');
+});
+    // $("#stuff").toggleClass('hide');
+   
+    // $("#image2").toggleClass('hide').toggleClass("imagePos2").toggleClass("cc");
+    // $("#image3").toggleClass('hide').toggleClass("imagePos3").toggleClass("cc");
+    // $("#image4").toggleClass('hide').toggleClass("imagePos4").toggleClass("cc");
+    
+    // setTimeout(function(){ 
+    //     $("#parent1").toggleClass("imagePos").toggleClass("cc").toggleClass("hide");
+    //     $("#image1").toggleClass("cc");
+    //     $("#image2").toggleClass("cc");
+    // }, 200);
+    // setTimeout(function(){ 
+    //     $("#parent2").toggleClass("imagePos2").toggleClass("cc").toggleClass("hide");
+    //     $("#image3").toggleClass("cc");
+    //     $("#image4").toggleClass("cc");
+    // }, 300);
+    // setTimeout(function(){ 
+    //     $("#parent3").toggleClass("imagePos3").toggleClass("cc").toggleClass("hide");
+    //     $("#image5").toggleClass("cc");
+    //     $("#image6").toggleClass("cc");
+    // }, 400);
+    // setTimeout(function(){ 
+    //     $("#parent4").toggleClass("imagePos4").toggleClass("cc").toggleClass("hide");
+    //     $("#image7").toggleClass("cc");
+    //     $("#image8").toggleClass("cc");
+    // }, 500);
+    // setTimeout(function(){ 
+    //     $("#parent5").toggleClass("imagePos5").toggleClass("cc").toggleClass("hide");
+    //     $("#image9").toggleClass("cc");
+    //     $("#image10").toggleClass("cc");
+    // }, 600);
+    // setTimeout(function(){ 
+    //     $("#parent6").toggleClass("imagePos6").toggleClass("cc").toggleClass("hide");
+    //     $("#image11").toggleClass("cc");
+    //     $("#image12").toggleClass("cc");
+    // }, 700);
+    // setTimeout(function(){ 
+    //     $("#parent7").toggleClass("imagePos7").toggleClass("cc").toggleClass("hide");
+    //     $("#image13").toggleClass("cc");
+    //     $("#image14").toggleClass("cc");
+    // }, 800);
+    // setTimeout(function(){ 
+    //     $("#parent8").toggleClass("imagePos8").toggleClass("cc").toggleClass("hide");
+    //     $("#image15").toggleClass("cc");
+    //     $("#image16").toggleClass("cc");
+    // }, 900);
+
+// $("#right").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#blueDiv").removeClass('moveLeft');
+//         $("#redDiv").addClass('moveRight');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#left").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#yellowDiv").removeClass('moveRight');
+//         $("#redDiv").addClass('moveLeft');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+    
+// });
+
+// $("#up").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#orangeDiv").removeClass('moveUp'); 
+//         $("#redDiv").addClass('moveDown');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#down").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#greenDiv").removeClass('moveDown');
+//         $("#redDiv").addClass('moveUp');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#blueLeft").click(function(){
+    
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#redDiv").removeClass('moveRight');
+//         $("#blueDiv").addClass('moveLeft');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#yellowRight").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#redDiv").removeClass('moveLeft');
+//         $("#yellowDiv").addClass('moveRight');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#orangeDown").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#redDiv").removeClass('moveDown');
+//         $("#orangeDiv").addClass('moveUp');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+// $("#greenUp").click(function(){
+//     $("#mainDiv").toggleClass("zoomOut");
+//     $("#mainDiv").toggleClass('oh');
+//     setTimeout(function(){ 
+//         $("#redDiv").removeClass('moveUp');
+//         $("#greenDiv").addClass('moveDown');
+//     }, 500);
+//     setTimeout(function(){ 
+//         $("#mainDiv").toggleClass("zoomOut");
+//         $("#mainDiv").toggleClass('oh');
+//     }, 1100);
+// });
+
+</script>

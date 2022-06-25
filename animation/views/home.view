@@ -1,0 +1,11 @@
+<div view="animation"></div>
+<script>
+</script>
+
+<settings>
+    {
+    hasFooter: true,
+    hasHeader: true,
+    hasNav: true
+    }
+</settings>

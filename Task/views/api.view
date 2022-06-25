@@ -1,0 +1,66 @@
+<div bind="url,att">
+    <select id="mySelect" class="w20"></select>
+</div>
+
+
+
+<script>
+    console.log(att);
+    var select = document.getElementById("mySelect");
+    API.get("/"+ url, {}, {}, 1)
+                .then((data) => {
+                    removeOptions(select);
+                    data.forEach(element => {
+                    var option = document.createElement('option');
+                    option.innerHTML = element[att];
+                    select.appendChild(option);
+            });
+                })
+                .catch((err) => {
+                    console.log("err:", err)
+                })
+
+    watch = {
+        url : function(){
+            API.get("/"+ url, {}, {}, 1)
+                .then((data) => {
+                    removeOptions(select);
+                    data.forEach(element => {
+                    var option = document.createElement('option');
+                    option.innerHTML = element[att];
+                    select.appendChild(option);
+            });
+                })
+                .catch((err) => {
+                    console.log("err:", err)
+                })
+
+        },
+        att: function(){
+            API.get("/"+ url, {}, {}, 1)
+                .then((data) => {
+                    removeOptions(select);
+                    data.forEach(element => {
+                    var option = document.createElement('option');
+                    option.innerHTML = element[att];
+                    select.appendChild(option);
+            });
+                })
+                .catch((err) => {
+                    console.log("err:", err)
+                })
+
+        }
+    };
+    
+
+
+                function removeOptions(selectElement) {
+                        var i, L = selectElement.options.length - 1;
+                        for(i = L; i >= 0; i--) {
+                            selectElement.remove(i);
+                        }
+                    }
+    
+    
+</script>

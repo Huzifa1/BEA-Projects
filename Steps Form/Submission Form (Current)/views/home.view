@@ -1,0 +1,353 @@
+<div bind="currentView">
+    <div class="fs0 g_nm m_w66 m_m_w90 round4x l p10 m_p8 m_m_p5 mt50" style="border: 1px solid rgb(206, 198, 198);">
+        <div class="active g_nm" id="parentStep1">
+            <a href="javascript:void(0)" id="href1">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm activeStep" id="buttonStep1" title="Type Of Service">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-face-agent cc"></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="w66 c p10 g_nm vm" id="desStep1">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 1/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Type Of Service
+                </div>
+            </div>
+            <div class="g_nm bl ov la" style="width: 1px;top:20%;bottom:20%"></div>
+        </div>
+
+        <div class="notActive g_nm" id="parentStep2">
+            <a href="javascript:void(0)" id="href2">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm outline light" id="buttonStep2" style="color: rgba(100, 87, 87, 0.664);" title="Contact Details">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-account-box-outline cc"></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="w66 c g_nm vm h" id="desStep2" style="padding: 10px 0 10px 10px;">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 2/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Contact Details
+                </div>
+            </div>
+            <div class="g_nm bl ov la" style="width: 1px;top:20%;bottom:20%"></div>
+        </div>
+
+        <div class="notActive g_nm" id="parentStep3">
+            <a href="javascript:void(0)" id="href3">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm outline light" id="buttonStep3" style="color: rgba(100, 87, 87, 0.664);" title="Written Content">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-feather cc"></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="w66 c g_nm vm h" id="desStep3" style="padding: 10px 0 10px 10px;">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 3/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Written Content
+                </div>
+            </div>
+            <div class="g_nm bl ov la" style="width: 1px;top:20%;bottom:20%"></div>
+        </div>
+
+        <div class="notActive g_nm" id="parentStep4">
+            <a href="javascript:void(0)" id="href4">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm outline light" id="buttonStep4" style="color: rgba(100, 87, 87, 0.664);" title="Illustrations">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-fountain-pen-tip cc"></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="w66 c g_nm vm h" id="desStep4" style="padding: 10px 0 10px 10px;">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 4/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Illustrations
+                </div>
+            </div>
+            <div class="g_nm bl ov la" style="width: 1px;top:20%;bottom:20%"></div>
+        </div>
+
+        <div class="notActive g_nm" id="parentStep5">
+            <a href="javascript:void(0)" id="href5">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm outline light" id="buttonStep5" style="color: rgba(100, 87, 87, 0.664);" title="Project Bracket">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-bookmark-outline cc"></span>
+                    </div>
+                </div>
+            </a>
+            <div class="w66 c g_nm vm h" id="desStep5" style="padding: 10px 0 10px 10px;">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 5/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Project Bracket
+                </div>
+            </div>
+            <div class="g_nm bl ov la" style="width: 1px;top:20%;bottom:20%"></div>
+        </div>
+
+        <div class="notActive g_nm" id="parentStep6">
+            <a href="javascript:void(0)" id="href6">
+                <div class="p25 c fs0 round100 g_nm m_p15 vm outline light" id="buttonStep6" style="color: rgba(100, 87, 87, 0.664);" title="Confirmation">
+                    <div class="g_nm sq100 m_sq50">
+                        <span class="fs30 m_fs20 mdi mdi-email-open-outline cc"></span>
+                    </div>
+                </div>
+            </a>
+            <div class="w66 c g_nm vm h" id="desStep6" style="padding: 10px 0 10px 10px;">
+                <div class="w100 fs12 m_fs8 m_m_fs6 l b" style="color: #5f30e2;">
+                Step 6/6
+                </div>
+                <div class="w100 fs12 m_fs8 cb l b">
+                    Confirmation
+                </div>
+            </div>
+        </div>
+    </div>
+    <div view="{{currentView}}"></div>
+</div>
+<style>
+    .activeStep{
+        background-color: #5f30e2;
+        color: white;
+    }
+    .active{
+        width: 37.5%;
+        padding-left: 10px;
+    }
+    .notActive{
+        width: 12.5%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .sbtn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.light.outline {
+    color: #f8f9fa;
+    background-color: transparent;
+    background-image: none;
+    border-color: #fff;
+}
+.light.outline:hover {
+    background-color: #f0eef5;
+    border-color: #f0eef5;
+}
+.completed{
+    background-color: #f8f9fa !important;
+    color: #5f30e2 !important;
+}
+.sbtn.primary {
+    color: #fff;
+    background-color: #5f30e2;
+    border-color: #5f30e2;
+}
+.sbtn.primary:hover {
+    background-color: #4610c5;
+    border-color: #4610c5;
+}
+.disabled{
+    pointer-events: none;
+    cursor: default;
+}
+</style>
+
+
+<script>
+    var currentView;
+    if(nodes[1] == null){
+        currentView = "step1"
+    }
+    else{
+        currentView = nodes[1];
+    }
+    status();
+    if(nodes[1] == "step1"){
+        step1();
+    }
+    else if(nodes[1] == "step2"){
+        step2();
+    }
+    else if(nodes[1] == "step3"){
+        step3();
+    }
+    else if(nodes[1] == "step4"){
+        step4();
+    }
+    else if(nodes[1] == "step5"){
+        step5();
+    }
+    else if(nodes[1] == "step6"){
+        step6();
+    }
+
+    function status(){
+        if(sessionStorage.getItem("step1") == null){
+            $("#href1").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step1"){
+            $("#href1").attr("href", "/home/step1");
+            if(!$("#buttonStep1").hasClass("completed")){
+                $("#buttonStep1").addClass("completed")
+            }
+        }
+        if(sessionStorage.getItem("step2Name") == null){
+            $("#href2").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step2"){
+            $("#href2").attr("href", "/home/step2");
+            if(!$("#buttonStep2").hasClass("completed")){
+                $("#buttonStep2").addClass("completed")
+            }
+        }
+        if(sessionStorage.getItem("step3") == null){
+            $("#href3").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step3"){
+            $("#href3").attr("href", "/home/step3");
+            if(!$("#buttonStep3").hasClass("completed")){
+                $("#buttonStep3").addClass("completed")
+            }
+        }
+
+        if(sessionStorage.getItem("step4") == null){
+            $("#href4").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step4"){
+            $("#href4").attr("href", "/home/step4");
+            if(!$("#buttonStep4").hasClass("completed")){
+                $("#buttonStep4").addClass("completed")
+            }
+        }
+        if(sessionStorage.getItem("step5") == null){
+            $("#href5").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step5"){
+            $("#href5").attr("href", "/home/step5");
+            if(!$("#buttonStep5").hasClass("completed")){
+                $("#buttonStep5").addClass("completed")
+            }
+        }
+        if(sessionStorage.getItem("step6") == null){
+            $("#href6").attr("href", "javascript:void(0)");
+        }
+        else if(nodes[1] != "step6"){
+            $("#href6").attr("href", "/home/step6");
+            if(!$("#buttonStep6").hasClass("completed")){
+                $("#buttonStep6").addClass("completed")
+            }
+        }
+    }
+    
+
+
+
+    function active(id){
+        $("#parentStep" + id).removeClass("notActive").addClass("active");
+        $("#buttonStep" + id).removeClass("outline light").addClass("activeStep");
+        $("#buttonStep" + id).css("color", "white");
+        $("#desStep" + id).removeClass("h");
+    }
+    function notActive(id){
+        $("#parentStep" + id).removeClass("active").addClass("notActive");
+        $("#buttonStep" + id).removeClass("activeStep").addClass("outline light");
+        $("#buttonStep" + id).css("color", "rgba(100, 87, 87, 0.664)");
+        $("#desStep" + id).addClass("h");
+    }
+    function step1(){
+        if(!$("#parentStep1").hasClass("active")){
+            active(1);
+            notActive(2);
+            notActive(3);
+            notActive(4);
+            notActive(5);
+            notActive(6);
+        }
+    }
+    function step2(){
+        if(!$("#parentStep2").hasClass("active")){
+            active(2);
+            notActive(1);
+            notActive(3);
+            notActive(4);
+            notActive(5);
+            notActive(6);
+        }
+    }
+    function step3(){
+        if(!$("#parentStep3").hasClass("active")){
+            active(3);
+            notActive(1);
+            notActive(2);
+            notActive(4);
+            notActive(5);
+            notActive(6);
+        }
+    }
+    function step4(){
+        if(!$("#parentStep4").hasClass("active")){
+            active(4);
+            notActive(1);
+            notActive(2);
+            notActive(3);
+            notActive(5);
+            notActive(6);
+        }
+    }
+    function step5(){
+        if(!$("#parentStep5").hasClass("active")){
+            active(5);
+            notActive(1);
+            notActive(2);
+            notActive(3);
+            notActive(4);
+            notActive(6);
+        }
+    }
+    function step6(){
+        if(!$("#parentStep6").hasClass("active")){
+            active(6);
+            notActive(1);
+            notActive(2);
+            notActive(3);
+            notActive(4);
+            notActive(5);
+        }
+    }
+    function completed(id){
+        $("#buttonStep" + id).css("color", "#5f30e2");
+        $("#buttonStep" + id).removeClass("outline light").addClass("completed");
+    }
+</script>
+
+<settings>
+    {
+    hasFooter: true,
+    hasHeader: true,
+    hasNav: true
+    }
+</settings>

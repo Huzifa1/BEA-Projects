@@ -1,0 +1,26 @@
+
+    <div bind="">
+        
+    </div>
+
+
+
+    <script></script>
+
+
+
+
+
+
+
+
+
+
+
+<settings>
+    {
+    hasFooter: true,
+    hasHeader: true,
+    hasNav: false
+    }
+</settings>

@@ -1,0 +1,1 @@
+For Static Images, example: <img src="/images/yourimage.ext" />

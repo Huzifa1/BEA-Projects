@@ -1,0 +1,25 @@
+<div> Form 3
+    <form b-sub="beforeSub" o-sub="onSubmit">
+        <input type="text" name="username" id="username">
+        <input type="tel" name="phone" id="phone">
+        <input type="submit" class="sbtn primary" value="Go Home">
+    </form>
+</div>
+
+
+<script>
+    var username = '';
+    if(sessionStorage.getItem("username") != null)
+        username = sessionStorage.getItem("username");
+
+    $('#username').val(username);
+    function beforeSub(form, info){
+        alert(["before submit",info.username,info.phone]);
+        var username = $('#username').val();
+        sessionStorage.setItem("username", username);
+    }
+
+    function onSubmit(form, info){
+        alert(["on submit",info.username,info.phone])
+    }
+</script>

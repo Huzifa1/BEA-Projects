@@ -1,0 +1,182 @@
+<div bind="">
+    <div class="g_nm w40 pt50">
+        <div class="fs24 b l" style="color: #02044a;">
+            We can't wait to meet you.
+        </div>
+        <div class="fs14 l mt10 quesColor">
+            Please fill in the details below so that we can get contct with you.
+        </div>
+        <form b-sub="beforeSub" o-sub="onSubmit">
+            <div class="w100 fs0 mt40">
+                <div class="l g_nm w70 fs12" id="question1" style="color: #02044a;">Please enter your name</div>
+                <div class="r g_nm w30 fs12 vh" id="errorMessage1" style="color: red;">Your name is empty</div>
+            </div>
+            <div class="l mt5">
+                <input class="fs12 w100 round2x pl10" type="text" name="name1" id="inputName" placeholder="Name">
+            </div>
+            <div class="w100 fs0 mt20">
+                <div class="l g_nm w70 fs12" id="question2" style="color: #02044a;">Please enter a phone number</div>
+                <div class="r g_nm w30 fs12 vh" id="errorMessage2" style="color: red;">Invalid phone number</div>
+            </div>
+            <div class="l mt5">
+                <input class="fs12 w100 round2x pl50" type="text" name="number" id="inputNumber">
+                <div class="w10 fs12 ov ra" style="height: 40px;"><span class="cc">+961</span></div>
+            </div>
+            <div class="w100 fs0 mt20">
+                <div class="l g_nm w100 fs12" style="color: #02044a;">Please enter a link to your website (optional)</div>
+            </div>
+            <div class="l mt5">
+                <input class="fs12 w100 round2x pl10" type="text" name="website" id="inputWebsite">
+            </div>
+            <div class="fs0 r mt20">
+                <a href="/home/step1" class="g_nm round4x w20 sbtn light mt10 pt15 pb15 mr15">
+                    <span class="fs18 mdi mdi-arrow-left vm b"></span><span class="fs14 vm b"> &nbsp; Back</span>
+                </a>
+                <!-- <div class="g_nm round4x w40 sbtn primary mt10">
+                    <span class="cc fs14">Confirm Submission</span>
+                </div> -->
+                <!-- <input type="submit" class="g_nm sbtn primary mt10 w40 round4x fs14" value="Confirm Submission"> -->
+                <div class="g_nm w20 mt10 vm">
+                    <input type="submit" class="w100 round4x sbtn primary pt15 pb15" value="Next">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .selected{
+        border: 2px solid #5f30e2;
+    }
+    .notSelected{
+        border: 1px solid rgb(206, 198, 198);
+    }
+    input[type=text]{
+        height: 40px;
+        border: 1px solid rgb(206, 198, 198);
+    }
+    input[type=text]:focus {
+        border: 1px solid #5f30e2;
+        background-color: #e9e7f0;
+    }
+   .error{
+        border: 1px solid red !important;
+        background-color: #fcafb5;
+   }
+   .redColor{
+       color: red !important;
+   }
+   .quesColor{
+        color: #5b5b7c;
+   }
+</style>
+
+<script>
+
+    data();
+    function data(){
+        step2Name = sessionStorage.getItem("step2Name");
+        step2Number = sessionStorage.getItem("step2Number");
+        step2Website = sessionStorage.getItem("step2Website");
+        if((step2Name != null)){
+            $("#inputName").val(step2Name);
+        }
+        if((step2Number != null)){
+            $("#inputNumber").val(step2Number);
+        }
+        if((step2Website != null)){
+            $("#inputWebsite").val(step2Website);
+        }
+
+    }
+
+    function invalidName(){
+        var isValid = false;
+        var name = document.getElementById('inputName');
+        var question = document.getElementById('question1');
+        var errorMessage = document.getElementById('errorMessage1');
+        if(name.value == ""){
+            if(!name.classList.contains("error")){
+                name.classList.add("error");
+            }
+            if(!question.classList.contains("redColor")){
+                question.classList.add("redColor");
+            }
+            if(errorMessage.classList.contains("vh")){
+                errorMessage.classList.remove("vh");
+            }
+        }
+        else{
+            isValid = true;
+        }
+        return isValid;
+    }
+    function invalidNumber(){
+        var isValid = false;
+        var number = document.getElementById('inputNumber');
+        var question = document.getElementById('question2');
+        var errorMessage = document.getElementById('errorMessage2');
+        if(number.value.match(/^\d{2}\d{6}$/)==null){
+            if(!number.classList.contains("error")){
+                number.classList.add("error");
+            }
+            if(!question.classList.contains("redColor")){
+                question.classList.add("redColor");
+            }
+            if(errorMessage.classList.contains("vh")){
+                errorMessage.classList.remove("vh");
+            }
+        }
+        else{
+            isValid = true;
+        }
+        return isValid;
+    }
+    document.getElementById("inputName").onfocus = function() {focusName()};
+    function focusName(){
+        var name = document.getElementById('inputName');
+        var errorMessage = document.getElementById('errorMessage1');
+        var question = document.getElementById('question1');
+        if(name.classList.contains("error")){
+            name.classList.remove("error");
+        }
+        if(!errorMessage.classList.contains("vh")){
+            errorMessage.classList.add("vh");
+        }
+        if(question.classList.contains("redColor")){
+            question.classList.remove("redColor");
+        }
+    }
+    document.getElementById("inputNumber").onfocus = function() {focusNumber()};
+    function focusNumber(){
+        var number = document.getElementById('inputNumber');
+        var errorMessage = document.getElementById('errorMessage2');
+        var question = document.getElementById('question2');
+        if(number.classList.contains("error")){
+            number.classList.remove("error");
+        }
+        if(!errorMessage.classList.contains("vh")){
+            errorMessage.classList.add("vh");
+        }
+        if(question.classList.contains("redColor")){
+            question.classList.remove("redColor");
+        }
+    }
+    function beforeSub(form, info){ 
+        isValid = false;
+        if(invalidName() && invalidNumber()){
+            step2Name = info.name1;
+            step2Number = info.number;
+            step2Website = info.website;
+            // globals.information.step2 = step2Info;
+            sessionStorage.setItem("step2Name", step2Name);
+            sessionStorage.setItem("step2Number", step2Number);
+            sessionStorage.setItem("step2Website", step2Website);
+            isValid = true;
+        }
+        return isValid;
+    }
+    function onSubmit(form, info){
+        pushURL("/home/step3");
+    }
+</script>

@@ -1,0 +1,26 @@
+<div bind="header,description,body,footer">
+    <div class="sbtn primary" modal>Open Modal
+            <modal class="h">
+                <modal-title>{{header}}</modal-title>
+                <modal-description>{{description}}</modal-description>
+                <modal-body>{{body}}</modal-body>
+                <modal-footer>{{footer}}</modal-footer>
+            </modal>
+    </div>
+</div>
+
+
+
+
+<script>
+        var intr = null;
+    $('.openModalBtn').live('Open',function(ev, modal, initEl, data){
+    clearInterval(intr);
+        intr = setInterval(function(){
+            if(modal.find('[comp]').hasClass('complete')) {
+                clearInterval(intr);
+                alert("Modal Opened")
+            }
+        },100);
+    });
+    </script>
